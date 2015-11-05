@@ -1,0 +1,31 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.8)
+    css_parser (1.3.7)
+      addressable
+    htmlentities (4.3.4)
+    liquid (3.0.6)
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.6.2)
+    mini_portile (0.6.2)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    pony (1.11)
+      mail (>= 2.0)
+    premailer (1.8.6)
+      css_parser (>= 1.3.6)
+      htmlentities (>= 4.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  liquid
+  nokogiri
+  pony
+  premailer
+
+BUNDLED WITH
+   1.10.6
