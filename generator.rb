@@ -713,6 +713,7 @@ class TemplateParser
                 {% endif %}
                 </style>
             </head>
+            
             <body>
                 <table class="body">
                     <tr>
@@ -726,11 +727,13 @@ class TemplateParser
                                         </td>
                                     </tr>
                                 </table>
+
                             </center>
                         </td>
                     </tr>
                 </table>
             </body>
+
             </html>
         TPL
 
@@ -741,7 +744,7 @@ class TemplateParser
 
     # element, containing rows is either column or the whole template
     def parse_rows(elt)
-        elt.css('row').map do |row|
+        elt.xpath('./row').map do |row|
             parse_row row
         end.join
     end
@@ -750,7 +753,7 @@ class TemplateParser
     def parse_row(row)
         human_number = [ nil ] + %w(one two three four five six seven eight nine ten eleven twelve)
 
-        columns = row.css('col')
+        columns = row.xpath('./col')
         column_num = human_number[columns.size]
 
         custom_classes = row['class']
@@ -758,7 +761,9 @@ class TemplateParser
 
         template = <<-TPL
             <table class="block-grid {{ column_num }}-up{% if custom_classes %} {{ custom_classes }} {% endif %}"{% if custom_style %} style="{{ custom_style }} {% endif %}">
-                {{ content }}
+                <tr>
+                    {{ content }}
+                </tr>
             </table>
         TPL
 
@@ -775,14 +780,16 @@ class TemplateParser
         custom_style = col['style']
 
         template = <<-TPL
-            <tr>
-                <td{% if custom_classes %} class="{{ custom_classes }}" {% endif %}{% if custom_style %} style="{{ custom_style }} {% endif %}>
-                    {{ content }}
-                </td>
-            </tr>
+            <td{% if custom_classes %} class="{{ custom_classes }}" {% endif %}{% if custom_style %} style="{{ custom_style }} {% endif %}>
+                {{ content }}
+            </td>
         TPL
 
-        content = parse_rows(col) + col.content
+        content = parse_rows(col)
+
+        if col.xpath('./row').size == 0
+            content += col.children.to_s.strip
+        end
 
         render_template(template, 'content' => content)
     end
@@ -802,6 +809,8 @@ class Generator
 
         premailer = Premailer.new(html, warn_level: Premailer::Warnings::SAFE, with_html_string: true, adapter: :nokogiri)
         premailer.to_inline_css
+
+        html
     end
 
     def self.generate_and_send(template, email_list, options = {})
