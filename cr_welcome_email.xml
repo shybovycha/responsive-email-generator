@@ -27,51 +27,31 @@
             <row>
                 <col>
                     <row>
-                        <col>E-mail:<br/>{{ email }}</col>
+                        <col><b>E-mail:</b><br/>{{ email }}</col>
                     </row>
                     <row>
-                        <col>Bill to:<br/>{{ billTo }}</col>
+                        <col><b>Bill to:</b><br/>{{ billTo }}</col>
                     </row>
                     <row>
-                        <col>Order number:<br/>{{ orderNumber }}</col>
+                        <col><b>Order number:</b><br/>{{ orderNumber }}</col>
                     </row>
                     <row>
-                        <col>Order date:<br/>{{ orderDate }}</col>
-                    </row>
-                </col>
-
-                <col>
-                    <row>
-                        <col>Start date:<br/>{{ startDate }}</col>
-                    </row>
-                    <row>
-                        <col>End date:<br/>{{ endDate }}</col>
-                    </row>
-                    <row>
-                        <col>Subscription type:<br/>{{ subscriptionType }}</col>
-                    </row>
-                    <row>
-                        <col>Price:<br/>{{ subscriptionPrice }}</col>
-                    </row>
-                </col>
-            </row>
-
-            <hr/>
-
-            <row>
-                <col>
-                    <row>
-                        <col>Donation order number:<br/>{{ donationId }}</col>
-                    </row>
-
-                    <row>
-                        <col>Donation amount:<br/>{{ donationPrice }}</col>
+                        <col><b>Order date:</b><br/>{{ orderDate }}</col>
                     </row>
                 </col>
 
                 <col>
                     <row>
-                        <col>Donation type:<br/>{{ donationType }}</col>
+                        <col><b>Start date:</b><br/>{{ startDate }}</col>
+                    </row>
+                    <row>
+                        <col><b>End date:</b><br/>{{ endDate }}</col>
+                    </row>
+                    <row>
+                        <col><b>Subscription type:</b><br/>{{ subscriptionType }}</col>
+                    </row>
+                    <row>
+                        <col><b>Price:</b><br/>{{ subscriptionPrice }}</col>
                     </row>
                 </col>
             </row>
@@ -81,13 +61,33 @@
             <row>
                 <col>
                     <row>
-                        <col>Card type:<br/>{{ cardType }}</col>
+                        <col><b>Donation order number:</b><br/>{{ donationId }}</col>
+                    </row>
+
+                    <row>
+                        <col><b>Donation amount:</b><br/>{{ donationPrice }}</col>
                     </row>
                 </col>
 
                 <col>
                     <row>
-                        <col>Card number:<br/>{{ maskedCardNumber }}</col>
+                        <col><b>Donation type:</b><br/>{{ donationType }}</col>
+                    </row>
+                </col>
+            </row>
+
+            <hr/>
+
+            <row>
+                <col>
+                    <row>
+                        <col><b>Card type:</b><br/>{{ cardType }}</col>
+                    </row>
+                </col>
+
+                <col>
+                    <row>
+                        <col><b>Card number:</b><br/>{{ maskedCardNumber }}</col>
                     </row>
                 </col>
             </row>
