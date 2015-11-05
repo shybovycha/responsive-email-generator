@@ -1,6 +1,4 @@
-require 'pony'
 require 'liquid'
-# require 'mustache'
 require 'nokogiri'
 require 'premailer'
 
@@ -10,10 +8,9 @@ class TemplateParser
     end
 
     def parse!
-        email = @doc.css('email')
+        email = @doc.at_css('email')
 
-        custom_styles = email.css('style')
-        content = parse_rows(email)
+        custom_styles = email.at_css('style')
 
         template = <<-TPL
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -706,6 +703,33 @@ class TemplateParser
                     display: inherit !important;
                   }
                 }
+
+                .block {
+                    display:block;
+                    width:99.9%;
+                    clear: both;
+                }
+
+                td.separator {
+                    padding:0; width: 100%;
+                }
+
+                td.separator hr {
+                    margin: 10px;
+                }
+
+                .block-grid td {
+                    padding: 5px;
+                }
+
+                .separator-holder {
+                    width: 100%;
+                }
+
+                .separator-holder td {
+                    width: 100%;
+                    padding: 0;
+                }
                 {% if custom_styles %}
                     /* Custom Styles */
 
@@ -713,7 +737,7 @@ class TemplateParser
                 {% endif %}
                 </style>
             </head>
-            
+
             <body>
                 <table class="body">
                     <tr>
@@ -737,6 +761,21 @@ class TemplateParser
             </html>
         TPL
 
+        content = email.children.map do |elt|
+            case elt.name
+                when 'hr'
+                    parse_separator(elt)
+                when 'row'
+                    parse_row(elt)
+            end
+        end.join
+
+        known_children_tags = email.search('./row', './hr')
+
+        if known_children_tags.size == 0
+            content = email.children.to_s.strip
+        end
+
         render_template(template, 'content' => content, 'custom_styles' => custom_styles)
     end
 
@@ -744,9 +783,23 @@ class TemplateParser
 
     # element, containing rows is either column or the whole template
     def parse_rows(elt)
-        elt.xpath('./row').map do |row|
+        rows = elt.xpath('./row')
+
+        rows.map do |row|
             parse_row row
         end.join
+    end
+
+    def parse_separator(elt)
+        <<-TPL
+            <table class="block-grid one-up separator-holder">
+                <tr>
+                    <td class="separator">
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+        TPL
     end
 
     # rows may only contain columns
@@ -760,7 +813,7 @@ class TemplateParser
         custom_style = row['style']
 
         template = <<-TPL
-            <table class="block-grid {{ column_num }}-up{% if custom_classes %} {{ custom_classes }} {% endif %}"{% if custom_style %} style="{{ custom_style }} {% endif %}">
+            <table class="block-grid {{ column_num }}-up{% if custom_classes %} {{ custom_classes }} {% endif %}" {% if custom_style %} style="{{ custom_style }}" {% endif %}>
                 <tr>
                     {{ content }}
                 </tr>
@@ -771,34 +824,41 @@ class TemplateParser
             parse_col col
         end.join
 
-        render_template(template, 'content' => content, 'column_num' => column_num)
+        render_template(template, 'content' => content, 'column_num' => column_num, 'custom_classes' => custom_classes, 'custom_style' => custom_style)
     end
 
-    # columns, instead, may contain either rows or content
+    # columns, instead, may contain either rows, separators or content
     def parse_col(col)
         custom_classes = col['class']
         custom_style = col['style']
 
         template = <<-TPL
-            <td{% if custom_classes %} class="{{ custom_classes }}" {% endif %}{% if custom_style %} style="{{ custom_style }} {% endif %}>
+            <td{% if custom_classes %} class="{{ custom_classes }}" {% endif %}{% if custom_style %} style="{{ custom_style }}" {% endif %}>
                 {{ content }}
             </td>
         TPL
 
-        content = parse_rows(col)
+        content = col.children.map do |elt|
+            case elt.name
+                when 'hr'
+                    parse_separator(elt)
+                when 'row'
+                    parse_row(elt)
+            end
+        end.join
 
-        if col.xpath('./row').size == 0
-            content += col.children.to_s.strip
+        known_children_tags = col.search('./row', './hr')
+
+        if known_children_tags.size == 0
+            content = col.children.to_s.strip
         end
 
-        render_template(template, 'content' => content)
+        render_template(template, 'content' => content, 'custom_classes' => custom_classes, 'custom_style' => custom_style)
     end
 
     def render_template(template, bindings)
         liquid = Liquid::Template.parse(template)
         liquid.render(bindings)
-
-        # or Mustache.render(template, bindings)
     end
 end
 
@@ -809,16 +869,5 @@ class Generator
 
         premailer = Premailer.new(html, warn_level: Premailer::Warnings::SAFE, with_html_string: true, adapter: :nokogiri)
         premailer.to_inline_css
-
-        html
-    end
-
-    def self.generate_and_send(template, email_list, options = {})
-        html = generate(template)
-
-        mail_params = { :to => email_list.join(';'), :html_body => html }
-        Pony.mail mail_params.merge(options)
     end
 end
-
-#:via => :smtp, :via_options => { :address => 'smtp.gmail.com', :port => '587', :enable_starttls_auto => true, :user_name => 'user', :password => 'password_see_note', :authentication => :plain, :domain => "localhost.localdomain" }

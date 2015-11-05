@@ -688,10 +688,37 @@
                     display: inherit !important;
                   }
                 }
-                Liquid error: undefined method `to_liquid' for []:Nokogiri::XML::NodeSet
+
+                .block {
+                    display:block;
+                    width:99.9%;
+                    clear: both;
+                }
+
+                td.separator {
+                    padding:0; width: 100%;
+                }
+
+                td.separator hr {
+                    margin: 10px;
+                }
+
+                .block-grid td {
+                    padding: 5px;
+                }
+
+                .separator-holder {
+                    width: 100%;
+                }
+
+                .separator-holder td {
+                    width: 100%;
+                    padding: 0;
+                }
+                Liquid error: undefined method `to_liquid' for #<Nokogiri::XML::Element:0x007f9c691ef278>
                 </style>
             </head>
-            
+
             <body>
                 <table class="body">
                     <tr>
@@ -701,61 +728,65 @@
                                 <table class="container">
                                     <tr>
                                         <td>
-                                                        <table class="block-grid one-up"">
+                                                        <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Consumer Reports
+                <img src="" alt=""/>
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up separator-holder">
+                <tr>
+                    <td class="separator">
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                -------------
+                Dear {{ user.firstName }},
+            <br/>
+            Welcome to ConsumerReports.org! Below is important information regarding your account:
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up panel " >
                 <tr>
                                 <td>
-                Dear Tom, Welcome to Consumer Reports...
+                            <table class="block-grid two-up" >
+                <tr>
+                                <td>
+                            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                E-mail:<br/>{{ email }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid two-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                            <table class="block-grid one-up"">
-                <tr>
-                                <td>
-                Email
+                Bill to:<br/>{{ billTo }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                {{ email }}
+                Order number:<br/>{{ orderNumber }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Bill to
-            </td>
-
-                </tr>
-            </table>
-            <table class="block-grid one-up"">
-                <tr>
-                                <td>
-                {{ address }}
+                Order date:<br/>{{ orderDate }}
             </td>
 
                 </tr>
@@ -763,34 +794,34 @@
 
             </td>
             <td>
-                            <table class="block-grid one-up"">
+                            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Start date
+                Start date:<br/>{{ startDate }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                {{ date }}
+                End date:<br/>{{ endDate }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                End date
+                Subscription type:<br/>{{ subscriptionType }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                {{ date }}
+                Price:<br/>{{ subscriptionPrice }}
             </td>
 
                 </tr>
@@ -800,26 +831,98 @@
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up separator-holder">
+                <tr>
+                    <td class="separator">
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+            <table class="block-grid two-up" >
                 <tr>
                                 <td>
-                Price: $35
+                            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                Donation order number:<br/>{{ donationId }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Browse
+                Donation amount:<br/>{{ donationPrice }}
             </td>
 
                 </tr>
             </table>
-            <table class="block-grid one-up"">
+
+            </td>
+            <td>
+                            <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                <b>HELLO, WORLD!</b>
+                Donation type:<br/>{{ donationType }}
+            </td>
+
+                </tr>
+            </table>
+
+            </td>
+
+                </tr>
+            </table>
+            <table class="block-grid one-up separator-holder">
+                <tr>
+                    <td class="separator">
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+            <table class="block-grid two-up" >
+                <tr>
+                                <td>
+                            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                Card type:<br/>{{ cardType }}
+            </td>
+
+                </tr>
+            </table>
+
+            </td>
+            <td>
+                            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                Card number:<br/>{{ maskedCardNumber }}
+            </td>
+
+                </tr>
+            </table>
+
+            </td>
+
+                </tr>
+            </table>
+            <table class="block-grid one-up separator-holder">
+                <tr>
+                    <td class="separator">
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                <div class="h3">Total: {{ totalPrice }}</div>
+            </td>
+
+                </tr>
+            </table>
+
             </td>
 
                 </tr>

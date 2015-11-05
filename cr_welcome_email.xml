@@ -1,0 +1,104 @@
+<email>
+    <style>
+        td.h3 {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+    </style>
+
+    <row>
+        <col>
+            <img src="" alt=""/>
+        </col>
+    </row>
+
+    <hr/>
+
+    <row>
+        <col>
+            Dear {{ user.firstName }},
+            <br/>
+            Welcome to ConsumerReports.org! Below is important information regarding your account:
+        </col>
+    </row>
+
+    <row class="panel">
+        <col>
+            <row>
+                <col>
+                    <row>
+                        <col>E-mail:<br/>{{ email }}</col>
+                    </row>
+                    <row>
+                        <col>Bill to:<br/>{{ billTo }}</col>
+                    </row>
+                    <row>
+                        <col>Order number:<br/>{{ orderNumber }}</col>
+                    </row>
+                    <row>
+                        <col>Order date:<br/>{{ orderDate }}</col>
+                    </row>
+                </col>
+
+                <col>
+                    <row>
+                        <col>Start date:<br/>{{ startDate }}</col>
+                    </row>
+                    <row>
+                        <col>End date:<br/>{{ endDate }}</col>
+                    </row>
+                    <row>
+                        <col>Subscription type:<br/>{{ subscriptionType }}</col>
+                    </row>
+                    <row>
+                        <col>Price:<br/>{{ subscriptionPrice }}</col>
+                    </row>
+                </col>
+            </row>
+
+            <hr/>
+
+            <row>
+                <col>
+                    <row>
+                        <col>Donation order number:<br/>{{ donationId }}</col>
+                    </row>
+
+                    <row>
+                        <col>Donation amount:<br/>{{ donationPrice }}</col>
+                    </row>
+                </col>
+
+                <col>
+                    <row>
+                        <col>Donation type:<br/>{{ donationType }}</col>
+                    </row>
+                </col>
+            </row>
+
+            <hr/>
+
+            <row>
+                <col>
+                    <row>
+                        <col>Card type:<br/>{{ cardType }}</col>
+                    </row>
+                </col>
+
+                <col>
+                    <row>
+                        <col>Card number:<br/>{{ maskedCardNumber }}</col>
+                    </row>
+                </col>
+            </row>
+
+            <hr/>
+
+            <row>
+                <col>
+                    <div class="h3">Total: {{ totalPrice }}</div>
+                </col>
+            </row>
+        </col>
+    </row>
+</email>
