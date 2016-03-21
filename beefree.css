@@ -1,0 +1,465 @@
+#media-query {
+}
+
+.body {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.body > tbody {
+}
+
+.body > tbody > tr {
+    vertical-align: top;
+}
+
+.center {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.center > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+.center > table > tbody {
+}
+
+.center > table > tbody > tr {
+    vertical-align: top;
+}
+
+.center > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+}
+
+.container {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: inherit;
+}
+
+.container > tbody {
+}
+
+.container > tbody > tr {
+    vertical-align: top;
+}
+
+.container > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+}
+
+.block-grid {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    width: 100%;
+    max-width: 500px;
+    color: #000000;
+    background-color: transparent;
+}
+
+.block-grid > tbody {
+}
+
+.block-grid > tbody > tr {
+    vertical-align: top;
+}
+
+.block-grid > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    text-align: center;
+    font-size: 0;
+}
+
+.col {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.num12 {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+.num12 > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.num12 > table > tbody {
+}
+
+.num12 > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num12 > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+}
+
+.num12 > table > tbody > tr > td > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.num12 > table > tbody > tr > td > table > tbody {
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div {
+    height: 1px;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    border-top: 1px solid #BBBBBB;
+    width: 100%;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody {
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > div {
+    font-size: 14px;
+    line-height: 17px;
+    color: #555555;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: left;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > div > span {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > div > span > strong {
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > div > p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.num12 > table > tbody > tr > td > table > tbody > tr > td > div > div > br {
+}
+
+.two-up {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    width: 100%;
+    max-width: 500px;
+    color: #333;
+    background-color: #E7E7E7;
+}
+
+.two-up > tbody {
+}
+
+.two-up > tbody > tr {
+    vertical-align: top;
+}
+
+.two-up > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    text-align: center;
+    font-size: 0;
+}
+
+.num6 {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    text-align: center;
+}
+
+.num6 > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.num6 > table > tbody {
+}
+
+.num6 > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num6 > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+}
+
+.num6 > table > tbody > tr > td > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.num6 > table > tbody > tr > td > table > tbody {
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div {
+    color: #555555;
+    line-height: 120%;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > div {
+    font-size: 14px;
+    line-height: 17px;
+    color: #555555;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: left;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > div > strong {
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    border-top: 3px solid #BBBBBB;
+    width: 100%;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody {
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody > tr {
+    vertical-align: top;
+}
+
+.num6 > table > tbody > tr > td > table > tbody > tr > td > div > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+}
+
+.button-container {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.button-container > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+
+.button-container > table > tbody {
+}
+
+.button-container > table > tbody > tr {
+    vertical-align: top;
+}
+
+.button {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    height: 22px;
+    text-align: center;
+}
+
+.button > div {
+    mso-hide: all;
+    display: inline-block;
+    max-width: 100%;
+    width: auto;
+}
+
+.button > div > table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+    mso-hide: all;
+}
+
+.button > div > table > tbody {
+}
+
+.button > div > table > tbody > tr {
+    vertical-align: top;
+}
+
+.button > div > table > tbody > tr > td {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    border-collapse: collapse !important;
+    vertical-align: top;
+    mso-hide: all;
+    color: #ffffff;
+    border-radius: 0px;
+    background-color: #E72C20;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    text-align: center;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+}
+
+.button > div > table > tbody > tr > td > a {
+    display: block;
+    text-decoration: none;
+    -webkit-text-size-adjust: none;
+    text-align: center;
+    background-color: #E72C20;
+    color: #ffffff;
+    line-height: 22px;
+    mso-hide: all;
+}
+
+.button > div > table > tbody > tr > td > a > p {
+    margin: 0;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.button > div > table > tbody > tr > td > a > p > br {
+}

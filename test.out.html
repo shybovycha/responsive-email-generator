@@ -715,7 +715,15 @@
                     width: 100%;
                     padding: 0;
                 }
-                Liquid error: undefined method `to_liquid' for #<Nokogiri::XML::Element:0x007f9c691ef278>
+                
+                    /* Custom Styles */
+
+                    td.h3 {
+            font-size: 16pt;
+            font-weight: bold;
+            padding: 30px 10px;
+        }
+                
                 </style>
             </head>
 
@@ -747,8 +755,14 @@
                 <tr>
                                 <td>
                 Dear {{ user.firstName }},
-            <br/>
-            Welcome to ConsumerReports.org! Below is important information regarding your account:
+            </td>
+
+                </tr>
+            </table>
+            <table class="block-grid one-up" >
+                <tr>
+                                <td>
+                Welcome to ConsumerReports.org! Below is important information regarding your account:
             </td>
 
                 </tr>
@@ -762,7 +776,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                E-mail:<br/>{{ email }}
+                <b>E-mail:</b><br/>{{ email }}
             </td>
 
                 </tr>
@@ -770,7 +784,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Bill to:<br/>{{ billTo }}
+                <b>Bill to:</b><br/>{{ billTo }}
             </td>
 
                 </tr>
@@ -778,7 +792,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Order number:<br/>{{ orderNumber }}
+                <b>Order number:</b><br/>{{ orderNumber }}
             </td>
 
                 </tr>
@@ -786,7 +800,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Order date:<br/>{{ orderDate }}
+                <b>Order date:</b><br/>{{ orderDate }}
             </td>
 
                 </tr>
@@ -797,7 +811,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Start date:<br/>{{ startDate }}
+                <b>Start date:</b><br/>{{ startDate }}
             </td>
 
                 </tr>
@@ -805,7 +819,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                End date:<br/>{{ endDate }}
+                <b>End date:</b><br/>{{ endDate }}
             </td>
 
                 </tr>
@@ -813,7 +827,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Subscription type:<br/>{{ subscriptionType }}
+                <b>Subscription type:</b><br/>{{ subscriptionType }}
             </td>
 
                 </tr>
@@ -821,7 +835,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Price:<br/>{{ subscriptionPrice }}
+                <b>Price:</b><br/>{{ subscriptionPrice }}
             </td>
 
                 </tr>
@@ -844,7 +858,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Donation order number:<br/>{{ donationId }}
+                <b>Donation order number:</b><br/>{{ donationId }}
             </td>
 
                 </tr>
@@ -852,7 +866,7 @@
             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Donation amount:<br/>{{ donationPrice }}
+                <b>Donation amount:</b><br/>{{ donationPrice }}
             </td>
 
                 </tr>
@@ -863,7 +877,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Donation type:<br/>{{ donationType }}
+                <b>Donation type:</b><br/>{{ donationType }}
             </td>
 
                 </tr>
@@ -886,7 +900,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Card type:<br/>{{ cardType }}
+                <b>Card type:</b><br/>{{ cardType }}
             </td>
 
                 </tr>
@@ -897,7 +911,7 @@
                             <table class="block-grid one-up" >
                 <tr>
                                 <td>
-                Card number:<br/>{{ maskedCardNumber }}
+                <b>Card number:</b><br/>{{ maskedCardNumber }}
             </td>
 
                 </tr>
@@ -916,8 +930,8 @@
             </table>
             <table class="block-grid one-up" >
                 <tr>
-                                <td>
-                <div class="h3">Total: {{ totalPrice }}</div>
+                                <td class="h3" >
+                Total: {{ totalPrice }}
             </td>
 
                 </tr>

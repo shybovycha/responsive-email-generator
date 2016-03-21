@@ -10,7 +10,7 @@ class TemplateParser
     def parse!
         email = @doc.at_css('email')
 
-        custom_styles = email.at_css('style')
+        custom_style = email.at_css('style').content.to_s.strip
 
         template = <<-TPL
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -730,10 +730,10 @@ class TemplateParser
                     width: 100%;
                     padding: 0;
                 }
-                {% if custom_styles %}
+                {% if custom_style %}
                     /* Custom Styles */
 
-                    {{ suctom_styles }}
+                    {{ custom_style }}
                 {% endif %}
                 </style>
             </head>
@@ -776,7 +776,7 @@ class TemplateParser
             content = email.children.to_s.strip
         end
 
-        render_template(template, 'content' => content, 'custom_styles' => custom_styles)
+        render_template(template, 'content' => content, 'custom_style' => custom_style)
     end
 
     private
@@ -869,5 +869,7 @@ class Generator
 
         premailer = Premailer.new(html, warn_level: Premailer::Warnings::SAFE, with_html_string: true, adapter: :nokogiri)
         premailer.to_inline_css
+
+        html
     end
 end

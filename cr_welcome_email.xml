@@ -1,8 +1,9 @@
 <email>
     <style>
-        td.h3 {
+        .h3 {
             font-size: 16pt;
             font-weight: bold;
+            padding: 30px 10px;
         }
     </style>
 
@@ -17,7 +18,11 @@
     <row>
         <col>
             Dear {{ user.firstName }},
-            <br/>
+        </col>
+    </row>
+
+    <row>
+        <col>
             Welcome to ConsumerReports.org! Below is important information regarding your account:
         </col>
     </row>
@@ -27,31 +32,79 @@
             <row>
                 <col>
                     <row>
-                        <col><b>E-mail:</b><br/>{{ email }}</col>
+                        <col>
+                            <b>E-mail:</b><br/>{{ email }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>Bill to:</b><br/>{{ billTo }}</col>
+                        <col>
+                            <b>Bill to:</b><br/>{{ billTo }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>Order number:</b><br/>{{ orderNumber }}</col>
+                        <col>
+                            <b>Order number:</b><br/>{{ orderNumber }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>Order date:</b><br/>{{ orderDate }}</col>
+                        <col>
+                            <b>Order date:</b><br/>{{ orderDate }}
+                        </col>
                     </row>
                 </col>
 
                 <col>
                     <row>
-                        <col><b>Start date:</b><br/>{{ startDate }}</col>
+                        <col>
+                            <b>Start date:</b><br/>{{ startDate }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>End date:</b><br/>{{ endDate }}</col>
+                        <col>
+                            <b>End date:</b><br/>{{ endDate }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>Subscription type:</b><br/>{{ subscriptionType }}</col>
+                        <col>
+                            <b>Subscription type:</b><br/>{{ subscriptionType }}
+                        </col>
                     </row>
+
                     <row>
-                        <col><b>Price:</b><br/>{{ subscriptionPrice }}</col>
+                        <col>
+                            <b>Price:</b><br/>{{ subscriptionPrice }}
+                        </col>
+                    </row>
+                </col>
+            </row>
+
+            <hr/>
+
+            <row>
+                <col>
+                    <row>
+                        <col>
+                            <b>Donation order number:</b><br/>{{ donationId }}
+                        </col>
+                    </row>
+
+                    <row>
+                        <col>
+                            <b>Donation amount:</b><br/>{{ donationPrice }}
+                        </col>
+                    </row>
+                </col>
+
+                <col>
+                    <row>
+                        <col>
+                            <b>Donation type:</b><br/>{{ donationType }}
+                        </col>
                     </row>
                 </col>
             </row>
@@ -61,33 +114,17 @@
             <row>
                 <col>
                     <row>
-                        <col><b>Donation order number:</b><br/>{{ donationId }}</col>
-                    </row>
-
-                    <row>
-                        <col><b>Donation amount:</b><br/>{{ donationPrice }}</col>
+                        <col>
+                            <b>Card type:</b><br/>{{ cardType }}
+                        </col>
                     </row>
                 </col>
 
                 <col>
                     <row>
-                        <col><b>Donation type:</b><br/>{{ donationType }}</col>
-                    </row>
-                </col>
-            </row>
-
-            <hr/>
-
-            <row>
-                <col>
-                    <row>
-                        <col><b>Card type:</b><br/>{{ cardType }}</col>
-                    </row>
-                </col>
-
-                <col>
-                    <row>
-                        <col><b>Card number:</b><br/>{{ maskedCardNumber }}</col>
+                        <col>
+                            <b>Card number:</b><br/>{{ maskedCardNumber }}
+                        </col>
                     </row>
                 </col>
             </row>
@@ -95,8 +132,8 @@
             <hr/>
 
             <row>
-                <col>
-                    <div class="h3">Total: {{ totalPrice }}</div>
+                <col class="h3">
+                    Total: {{ totalPrice }}
                 </col>
             </row>
         </col>
